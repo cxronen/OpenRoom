@@ -4,4 +4,4 @@ python:
   - "2.7"
 
 script: 
-  - python cx.py $Server $CxUsername $CxPassword $ClientSecret $ProjectName $TeamName $PresetName $FolderExclusions $FileExclusions https://github.com/cxronen/OpenRoom.git "master" 0 0 0 
+  - python cx.py $Server $CxUsername $CxPassword $ClientSecret $ProjectName $TeamName $PresetName $FolderExclusions $FileExclusions https://github.com/cxronen/OpenRoom.git "master" 0 0 1 
