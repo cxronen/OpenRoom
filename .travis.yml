@@ -5,6 +5,7 @@
 # You can specify a custom docker image from Docker Hub as your build environment.
 language: python
 matrix:
+  install: pip install --user -r requirements.txt
   include:
   - name: "3.5 Static Analysis"
     python: "3.7.1"
