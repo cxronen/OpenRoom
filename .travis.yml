@@ -51,6 +51,5 @@ install:
     - curl-config --version; pip freeze
  include:
   - name: "3.5 Static Analysis"
-    python: "3.7.1"
     env: TEST_SUITE=suite_3_5_unit
     script: python cx.py $Server $CxUsername $CxPassword $ClientSecret $ProjectName $TeamName $PresetName $FolderExclusions $FileExclusions https://bitbucket.org/$BITBUCKET_REPO_OWNER/$BITBUCKET_REPO_SLUG.git "master" $HighThreshold $MediumThreshold $LowThreshold            
