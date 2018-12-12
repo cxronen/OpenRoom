@@ -5,7 +5,7 @@ import xmltodict
  
 args = sys.argv
 requests_rate = 10 #seconds   
- 
+
 if len(args) < 12 or len(args) > 15:
     print(args)
     print("Missing Arguments : this script should only include 7 parameters: "
@@ -60,6 +60,7 @@ else:
             "client_id": "resource_owner_client",
             "client_secret": clientSecret
         }
+        
         oauth2_response = requests.post(endpoint_server + "/auth/identity/connect/token", data=oauth2_data)
         if oauth2_response.status_code == 200:
             json = oauth2_response.json()
@@ -69,10 +70,8 @@ else:
  
  
     token = get_oauth2_token()
-    jsonversion = "application/json;v=1.0"
     headers = {
         "Authorization": token,
-        "Content-Type": jsonversion
     }
  
  
@@ -96,7 +95,8 @@ else:
             for team in teams:
                 if team['fullName'] == team_name:
                     return team['id']
-            return []
+            print ("The team was not found")
+            exit(1)
         else:
             error(teams_response)
             return None
@@ -122,8 +122,7 @@ else:
             "privateKey": git_private_key
         }
         git_settings_response = requests.post(
-            endpoint_server + "/projects/" + str(project_id) + "/sourceCode/remoteSettings/git", headers=headers,
-            data=git_settings_data)
+            endpoint_server + "/projects/" + str(project_id) + "/sourceCode/remoteSettings/git", headers=headers,data=git_settings_data)
         if git_settings_response.status_code == 204:
             return True
         else:
@@ -212,7 +211,7 @@ else:
         }
         headersScanProject = {
             "Authorization": token,
-            "cxOrigin": "BitbucketPipeline"
+            "cxOrigin": "GitHub"
         }
         start_scan_response = requests.post(endpoint_server + "/sast/scans", headers=headersScanProject, data=data)
         if start_scan_response.status_code == 201:
@@ -383,7 +382,6 @@ else:
  
     project_id = "0"
     team_id = get_team_by_name(team_name)
- 
     project_was_created = create_project(project_name, team_id)
     if project_was_created:
         print("Project Created")
