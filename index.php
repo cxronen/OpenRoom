@@ -1,9 +1,9 @@
 <?php
-	session_start();
+	session_start(); //123
 	
 	include("includes/or-theme.php");
 	
-	//Check for and enforce SSL
+	//Check for and enforce SSL 123
 	if($settings["https"] == "true" && $_COOKIE["redirected"] != "true"){
 		$op = isset($_GET["op"])?"?op=".$_GET["op"]:"";
 		setcookie("redirected", "true");
