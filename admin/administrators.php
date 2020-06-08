@@ -23,7 +23,7 @@
 			case "addadministrator":
 				$adminname = isset($_REQUEST["adminname"])?$_REQUEST["adminname"]:"";
 				if($adminname != ""){
-					if(mysql_query("INSERT INTO administrators(username) VALUES('". $adminname ."');")){
+					if(mysql_query("INSERT INTO administrators(username) VALUES('". htmlentities($adminname) ."');")){
 						$successmsg = $adminname ." has been added to the adminstrator list.";
 					}
 					else{
