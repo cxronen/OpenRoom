@@ -17,7 +17,7 @@
 		$op = isset($_REQUEST["op"])?$_REQUEST["op"]:"";
 		
 		$successmsg = "";
-		$errormsg = ""; //algo
+		$errormsg = ""; //algo 2
 		
 		switch($op){
 			case "addadministrator":
