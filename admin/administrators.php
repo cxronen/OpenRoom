@@ -78,7 +78,7 @@
 	<center>
 	<?php if($_SESSION["isadministrator"] == "TRUE"){
 		if($successmsg != ""){
-		    #htmlentities  123 456
+		    #htmlentities  
 		    echo "<div id=\"successmsg\">". $successmsg ."</div>";
 		}
 		if($errormsg != ""){
