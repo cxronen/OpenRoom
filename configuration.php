@@ -2,7 +2,7 @@
 //configuration.php
 /*
 *This file contains configuration information required for OpenRoom's install.php
-*test 123456 81
+*test 123456 8111
 */
 
 //Administrative User
