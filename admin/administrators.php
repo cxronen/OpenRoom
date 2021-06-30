@@ -1,4 +1,4 @@
-<?php
+<?php//11
 	session_start();
 	
 	include("../includes/or-dbinfo.php");
