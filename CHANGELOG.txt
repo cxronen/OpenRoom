@@ -4,7 +4,7 @@
 	or-reserve.php (367)
 	
 	21
-
+1
 OpenRoom 1.4 - 3/5/2012
 ========================================================================
 -Corrected an issue that was causing room creation to fail silently when
